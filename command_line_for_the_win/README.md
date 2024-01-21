@@ -1,5 +1,3 @@
-vi README.md
-
 <H1 align="center", height="1500"> <ins> README.md File </ins> </H1>
 <H1 align="center", height="1500"> <ins> Command line for the win </ins> </H1>
 
