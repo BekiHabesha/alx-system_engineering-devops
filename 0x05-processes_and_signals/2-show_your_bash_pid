@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays a list of currently running
+#      processes containing the bash keyword.
+#   shellcheck disable=SC2009
+# Author Bereket Dereje Mekkonen
+
+ps -aux | grep bash
