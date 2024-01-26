@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script Kills the
+#      process 7-highlander.
+# Author Bereket Dereje Mekkonen
+
+pkill -f -SIGKILL 7-highlander
