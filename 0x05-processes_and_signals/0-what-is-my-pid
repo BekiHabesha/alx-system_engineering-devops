@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Author Bereket Dereje
+# This script is displaying its own PID.
+
+echo $$
