@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Bash script that uses ssh to Connects
-#   to server 100.24.237.58 with key in ~/.ssh/school
+#   to server 54.90.58.192 with key in ~/.ssh/school
 #   with the user ubuntu.
 # Author Bereket Dereje
 
-ssh -i ~/.ssh/school ubuntu@100.24.237.58
+ssh -i ~/.ssh/school ubuntu@54.90.58.192
