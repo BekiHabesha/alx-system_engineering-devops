@@ -1,11 +1,5 @@
 # ssh config file
-# The machine has an SSH configuration file for the local SSH client, 
-#   let’s configure it to our needs so that we can connect to a server without typing a password.
-# Share SSH client configuration in the answer file.
-# SSH client configuration must be configured to use the private key ~/.ssh/school
-# SSH client configuration must be configured to refuse to authenticate using a password
 # Author Bereket Dereje
-
 Host *
       PasswordAuthentication no
       IdentifyFile ~/.ssh/school
