@@ -3,7 +3,7 @@
 import requests
 
 
-def number_of_subscribers(subreddit):
+def number_of_subscribers(subreddit, hot_list=[], after="", count=0):
     """ Queries the Reddit API of the users"""
     req = requests.get(
         "https://www.reddit.com/r/{}/about.json".format(subreddit),
