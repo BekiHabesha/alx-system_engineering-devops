@@ -1,32 +1,28 @@
 #!/usr/bin/python3
-"""" to ten """
+"""Contains top_ten function"""
 import requests
 
 
 def top_ten(subreddit):
-    """Gets the titles of the first 10 hot posts in a subreddit."""
-    headers = {
-        "User-Agent": "Bekihabesha",
-    }
-    try:
-        res = requests.get('https://www.reddit.com/r/'
-                           + subreddit + '/hot.json?limit=10',
-                           headers=headers, allow_redirects=False)
-        subreddit_data = res.json()
+    """Print the titles of the 10 hottest posts on a given subreddit."""
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    headers = {"User-Agent": "Bekihabesha"}
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
-        if 'error' in subreddit_data:
-            print('None')
-        else:
-            """ try line """
-            data = subreddit_data.get('data', {})
-            children = data.get('children', [])
-            for post in children:
-                post_data = post.get('data', {})
-                title = post_data.get('title')
-                if title:
-                    print(title)
-                else:
-                    print("Error: Missing 'title' field in post data")
+    if response.status_code != 404:
+        return None
 
-    except Exception as e:
-        print('None')
+    data = response.json()
+    posts = data.get('data', {}).get('children', [])
+
+    if not posts:
+        return
+
+    for post in posts:
+        title = post.get('data', {}).get('title')
+        post_data.append(title)
+
+    if data.get('data', {}).get('after'):
+        return top_ten(subreddit)
+    else:
+        return
